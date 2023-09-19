@@ -1,0 +1,7 @@
+[grupo1]
+servera.lab.example.com
+serverb.lab.example.com
+
+[grupo2]
+serverc.lab.example.com
+serverd.lab.example.com
