@@ -3,14 +3,14 @@
   hosts: grupo1
   become_method: sudo
   vars: 
-      path_File_CodError: /home/student/Documents/bac/bac_FilterLogs/codigosdeError.txt
+      path_File_CodError: ./codigosdeError.txt
       path_File_Log: var/www/bac/logs/AMQERR01.LOG 
       path_File_Output: ./salidaLog.txt
-      path_script: /home/student/Documents/bac/bac_FilterLogs/extraerCodigosError.py
+      path_script: ./extraerCodigosError.py
   tasks:
 
     - name: Ejecutar el script en el host remoto
-      script: home/student/Documents/bac/bac_FilterLogs/extraerCodigosError.py {{ path_File_CodError }} {{ path_File_Log }} {{ path_File_Output }}
+      script: ./extraerCodigosError.py {{ path_File_CodError }} {{ path_File_Log }} {{ path_File_Output }}
       register: script_output
 
     - name: Recuperar el archivo de salida del host remoto
