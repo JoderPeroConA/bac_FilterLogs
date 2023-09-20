@@ -1,0 +1,14 @@
+---
+- name: Crear Carpetas y mover archivos de logs
+  hosts: grupo1
+  become_method: sudo
+  tasks:
+    - name: Crear directorio si no existe
+      ansible.builtin.file:
+          path: var/www/bac/logs 
+          state: directory
+          mode: '0755'
+    - name: copiar archivos logs 
+      copy: 
+        src: /home/student/Documents/bac/bac_FilterLogs/logs/AMQERR01.LOG
+        dest: var/www/bac/logs/AMQERR01.LOG 
